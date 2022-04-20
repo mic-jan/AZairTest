@@ -26,18 +26,18 @@ public class SearchPageTest {
 
 //        driver.navigate().to("https://www.azair.eu/");
     }
-//    @Test
-//    public void searchFirstFlight() throws InterruptedException {
-//        String searchURL = "https://www.azair.eu/";
-//        SearchPage searchPage = new SearchPage(driver);
-//        searchPage.goTo(searchURL)
-//                .selectOneWayTicket()
-//                .selectSourceAirport("WRO")
-//                .selectTakeMeAnywhere()
-//                .searchFlight();
-//        Thread.sleep(10000);
-//
-//    }
+    @Test
+    public void searchFirstFlight() throws InterruptedException {
+        String searchURL = "https://www.azair.eu/";
+        SearchPage searchPage = new SearchPage(driver);
+        searchPage.goTo(searchURL)
+                .selectOneWayTicket()
+                .selectSourceAirport("WRO")
+                .selectTakeMeAnywhere();
+        searchPage.searchFlight();
+        Thread.sleep(5000);
+    }
+
     @Test
     public void searchSecondFlight() throws InterruptedException {
         String searchURL = "https://www.azair.eu/";
@@ -51,7 +51,6 @@ public class SearchPageTest {
                 .selectDepartureDate("30.04.2022")
                 .selectReturnDate("14.09.2022")
                 .selectMaxChanges(1);
-//        Thread.sleep(5000);
         searchPage.searchFlight();
         Thread.sleep(5000);
         resultPage.bookFirstResult();

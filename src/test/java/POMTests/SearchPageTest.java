@@ -7,6 +7,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pageObjects.ResultPage;
 import pageObjects.SearchPage;
 
 import java.util.concurrent.TimeUnit;
@@ -37,23 +38,23 @@ public class SearchPageTest {
         Thread.sleep(5000);
     }
 
-//    @Test
-//    public void searchSecondFlight() throws InterruptedException {
-//        String searchURL = "https://www.azair.eu/";
-//        SearchPage searchPage = new SearchPage(driver);
-//        ResultPage resultPage = new ResultPage(driver);
-//        searchPage.goTo(searchURL)
-//                .selectOneWayTicket()
-//                .selectSourceAirport("WRO")
-//                .selectDestinationAirport("BCN")
-//                .selectCurrency("PLN")
-//                .selectDepartureDate("30.04.2022")
-//                .selectReturnDate("14.09.2022")
-//                .selectMaxChanges(1);
-//        searchPage.searchFlight();
-//        Thread.sleep(5000);
-//        resultPage.bookFirstResult();
-//    }
+    @Test
+    public void searchSecondFlight() throws InterruptedException {
+        String searchURL = "https://www.azair.eu/";
+        SearchPage searchPage = new SearchPage(driver);
+        ResultPage resultPage = new ResultPage(driver);
+        searchPage.goTo(searchURL)
+                .selectOneWayTicket()
+                .selectSourceAirport("WRO")
+                .selectDestinationAirport("BCN")
+                .selectCurrency("PLN")
+                .selectDepartureDate("30.04.2022")
+                .selectReturnDate("14.09.2022")
+                .selectMaxChanges(1);
+        searchPage.searchFlight();
+        Thread.sleep(5000);
+        resultPage.bookFirstResult();
+    }
     @AfterEach
     public void closeDriver() {
         driver.quit();

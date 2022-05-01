@@ -1,4 +1,4 @@
-package TestyPOM;
+package POMTests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,7 +7,6 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pageObjects.ResultPage;
 import pageObjects.SearchPage;
 
 import java.util.concurrent.TimeUnit;

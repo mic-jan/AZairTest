@@ -1,2 +1,4 @@
-package stepDefinitions;public class ResultPageStepDefinition {
+package stepDefinitions;
+
+public class ResultPageStepDefinition {
 }

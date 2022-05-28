@@ -13,4 +13,4 @@ Feature: AZair OW Flight test no. 3
     And   Perform search
     And   User is navigated to result page
     And   Results are displayed
-    And   Book cheapest result
+    Then  Book cheapest result

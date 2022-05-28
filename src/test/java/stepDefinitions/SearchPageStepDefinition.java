@@ -1,15 +1,12 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.*;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.ResultPage;
 import pageObjects.SearchPage;
-//import pageObjects.Pages;
-
-import java.util.concurrent.TimeUnit;
 
 public class SearchPageStepDefinition {
 
@@ -22,11 +19,8 @@ public class SearchPageStepDefinition {
         System.setProperty("webdriver.chrome.driver", "C:\\Programowanie\\chromedriver.exe");
         driver = new ChromeDriver();
         searchPage = new SearchPage(driver);
-
-//        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        resultPage = new ResultPage(driver);
         driver.manage().window().maximize();
-//        driver.manage().window().setSize(new Dimension(1360, 800));
-//        driver.manage().window().setPosition(new Point(30, 30));
     }
 
     @Given("User is on AZair search page")
@@ -45,9 +39,19 @@ public class SearchPageStepDefinition {
         searchPage.selectSourceAirport(sourceAirport);
     }
 
+    @And("Select source area: {string}")
+    public void selectSourceArea(String sourceArea) throws InterruptedException {
+        searchPage.selectSourceArea(sourceArea);
+    }
+
     @And("Select destination airport {string}")
     public void selectDestinationAirport(String destinationAirport) throws InterruptedException {
         searchPage.selectDestinationAirport(destinationAirport);
+    }
+
+    @And("Select destination area: {string}")
+    public void selectDestinationArea(String destinationArea) throws InterruptedException {
+        searchPage.selectDestinationArea(destinationArea);
     }
 
     @And("Select Take Me Anywhere")
@@ -81,7 +85,7 @@ public class SearchPageStepDefinition {
     public void performSearch() throws InterruptedException {
         Thread.sleep(500);
         searchPage.searchFlight();
-        resultPage = new ResultPage(driver);
+
     }
 
     @And("User is navigated to result page")
@@ -99,6 +103,6 @@ public class SearchPageStepDefinition {
     @And("Select departure days {string} and return days {string}")
     public void selectDepartureDaysAndReturnDays(String departureDays, String returnDays) throws InterruptedException {
         searchPage.selectWeekdays(departureDays, returnDays);
-        Thread.sleep(5000);
+        Thread.sleep(1000);
     }
 }

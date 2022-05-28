@@ -6,18 +6,16 @@ import pageObjects.ResultPage;
 import pageObjects.SearchPage;
 
 public class ResultPageStepDefinition {
-
-//    ResultPage resultPage;
+    ResultPage resultPage;
 
     @And("Results are displayed")
     public void resultsAreDisplayed() throws InterruptedException {
-//        resultPage.bookFirstResult();
         Thread.sleep(5000);
     }
 
     @And("Book cheapest result")
     public void bookCheapestResult() throws InterruptedException {
-//        resultPage.bookFirstResult();
+        resultPage.bookFirstResult();
         Thread.sleep(10000);
     }
 }

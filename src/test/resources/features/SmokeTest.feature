@@ -8,3 +8,4 @@ Feature: AZair smoke test
     And   Select Take Me Anywhere
     And   Perform search
     Then  User is navigated to result page
+    And   Book cheapest result

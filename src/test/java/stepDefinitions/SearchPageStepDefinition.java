@@ -7,20 +7,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.ResultPage;
 import pageObjects.SearchPage;
+import stepDefinitions.core.DriverClass;
 
 public class SearchPageStepDefinition {
 
-    WebDriver driver;
     SearchPage searchPage;
-    ResultPage resultPage;
+
+    public SearchPageStepDefinition (DriverClass driverClass){
+        searchPage = new SearchPage(driverClass.getDriver());
+    }
+
 
     @Given("Browser is open")
     public void browserIsOpen() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Programowanie\\chromedriver.exe");
-        driver = new ChromeDriver();
-        searchPage = new SearchPage(driver);
-        resultPage = new ResultPage(driver);
-        driver.manage().window().maximize();
+        searchPage.openAZAir();
     }
 
     @Given("User is on AZair search page")
@@ -90,7 +90,7 @@ public class SearchPageStepDefinition {
 
     @And("User is navigated to result page")
     public void user_is_navigated_to_result_page() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(2500);
     }
 
 

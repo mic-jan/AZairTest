@@ -7,9 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class SearchPage {
     WebDriver driver;
-    public SearchPage(WebDriver driver) {
-        this.driver = driver;
-    }
 
     By buttonSearch = By.xpath("//input[@value='Search']");
     By checkboxTakeMeAnywhere = By.xpath("//input[@name='anywhere']");
@@ -21,6 +18,10 @@ public class SearchPage {
     By radiobuttonOneWay = By.xpath("//input[@value='oneway']");
     By radiobuttonReturn = By.xpath("//input[@value='return']");
     By buttonAdvancedSearchParameters = By.id("showMoreParams");
+
+    public SearchPage(WebDriver driver) {
+        this.driver = driver;
+    }
 
     public void goTo(String searchURL) {
         driver.navigate().to(searchURL);
@@ -116,7 +117,7 @@ public class SearchPage {
 
     public void selectWeekdays(String departureWeekdays, String returnWeekdays) throws InterruptedException {
         for (int i = 1; i <= 7; i++) {
-            Thread.sleep(250);
+            Thread.sleep(750);
             if (!departureWeekdays.contains(Integer.toString(i))) {
                 driver.findElement((By.xpath("//input[@name='dep" + Integer.toString(i - 1) + "']"))).click();
             }
@@ -124,5 +125,9 @@ public class SearchPage {
                 driver.findElement((By.xpath("//input[@name='arr" + Integer.toString(i - 1) + "']"))).click();
             }
         }
+    }
+
+    public void openAZAir() {
+        driver.get("https://www.azair.eu");
     }
 }

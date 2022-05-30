@@ -3,7 +3,7 @@ Feature: AZair RT Flight test no. 1
   @Test1
   Scenario: AZair RT Flight test no. 1
     Given Browser is open
-    And   User is on AZair search page
+#    And   User is on AZair search page
 #    When  Select one way ticket
     And   Select source airport: "BER"
     And   Select destination airport "MAD"

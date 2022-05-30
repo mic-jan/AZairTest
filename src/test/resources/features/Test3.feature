@@ -3,7 +3,7 @@ Feature: AZair OW Flight test no. 3
   @Test3
   Scenario: AZair OW Flight test no. 3
     Given Browser is open
-    And   User is on AZair search page
+#    And   User is on AZair search page
     When  Select one way ticket
     And   Select source airport: "WRO"
     And   Select destination airport "STN"

@@ -3,24 +3,60 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class SearchPage {
     WebDriver driver;
 
-    By buttonSearch = By.xpath("//input[@value='Search']");
-    By checkboxTakeMeAnywhere = By.xpath("//input[@name='anywhere']");
-    By inputDestinationAirport = By.xpath("//input[@name='dstAirport']");
-    By inputSourceAirport = By.xpath("//input[@name='srcAirport']");
-    By listCurrency = By.name("currency");
-    By listDepartureMonth = By.name("depmonth");
-    By listReturnMonth = By.name("arrmonth");
-    By radiobuttonOneWay = By.xpath("//input[@value='oneway']");
-    By radiobuttonReturn = By.xpath("//input[@value='return']");
-    By buttonAdvancedSearchParameters = By.id("showMoreParams");
+    @FindBy(xpath = "//input[@value='Search']")
+    private WebElement buttonSearch;
+
+    @FindBy(xpath = "//input[@name='anywhere']")
+    private WebElement checkboxTakeMeAnywhere;
+
+    @FindBy(xpath = "//input[@name='dstAirport']")
+    private WebElement inputDestinationAirport;
+
+    @FindBy(xpath = "//input[@name='srcAirport']")
+    private WebElement inputSourceAirport;
+
+    @FindBy(name = "currency")
+    private WebElement listCurrency;
+
+    @FindBy(name = "depmonth")
+    private WebElement listDepartureMonth;
+
+    @FindBy(name = "arrmonth")
+    private WebElement listReturnMonth;
+
+    @FindBy(xpath = "//input[@value='oneway']")
+    private WebElement radiobuttonOneWay;
+
+    @FindBy(xpath = "//input[@value='return']")
+    private WebElement radiobuttonReturn;
+
+    @FindBy(id = "showMoreParams")
+    private WebElement buttonAdvancedSearchParameters;
+
+//    TO DO: Delete after implementing page factory
+//    By buttonSearch = By.xpath("//input[@value='Search']");
+//    By checkboxTakeMeAnywhere = By.xpath("//input[@name='anywhere']");
+//    By inputDestinationAirport = By.xpath("//input[@name='dstAirport']");
+//    By inputSourceAirport = By.xpath("//input[@name='srcAirport']");
+//    By listCurrency = By.name("currency");
+//    By listDepartureMonth = By.name("depmonth");
+//    By listReturnMonth = By.name("arrmonth");
+//    By radiobuttonOneWay = By.xpath("//input[@value='oneway']");
+//    By radiobuttonReturn = By.xpath("//input[@value='return']");
+//    By buttonAdvancedSearchParameters = By.id("showMoreParams");
 
     public SearchPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
     }
 
     public void goTo(String searchURL) {
@@ -28,55 +64,55 @@ public class SearchPage {
     }
 
     public void selectSourceAirport(String sourceAirportCode) throws InterruptedException {
-        driver.findElement(inputSourceAirport).sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
-        driver.findElement(inputSourceAirport).sendKeys(sourceAirportCode);
+        inputSourceAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
+        inputSourceAirport.sendKeys(sourceAirportCode);
 //        Thread.sleep(1000);
         By buttonSourceAirport = By.xpath("//strong[text()='" + sourceAirportCode + "']//parent::span[@class='code']");
         driver.findElement(buttonSourceAirport).click();
     }
 
     public void selectSourceArea(String sourceArea) throws InterruptedException {
-        driver.findElement(inputSourceAirport).sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
-        driver.findElement(inputSourceAirport).sendKeys(sourceArea);
+        inputSourceAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
+        inputSourceAirport.sendKeys(sourceArea);
 //        Thread.sleep(1000);
         By buttonSourceAirport = By.xpath("//span[@class='code' and text()='All airports']");
         driver.findElement(buttonSourceAirport).click();
     }
 
     public void selectDestinationAirport(String destinationAirportCode) throws InterruptedException {
-        driver.findElement(inputDestinationAirport).sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
-        driver.findElement(inputDestinationAirport).sendKeys(destinationAirportCode);
+        inputDestinationAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
+        inputDestinationAirport.sendKeys(destinationAirportCode);
         By buttonDestinationAirport = By.xpath("//strong[text()='" + destinationAirportCode + "']//parent::span[@class='code']");
         driver.findElement(buttonDestinationAirport).click();
     }
 
     public void selectDestinationArea(String destinationArea) throws InterruptedException {
-        driver.findElement(inputDestinationAirport).sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
-        driver.findElement(inputDestinationAirport).sendKeys(destinationArea);
+        inputDestinationAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
+        inputDestinationAirport.sendKeys(destinationArea);
 //        Thread.sleep(1000);
         By buttonSourceAirport = By.xpath("//span[@class='code' and text()='All airports']");
         driver.findElement(buttonSourceAirport).click();
     }
 
     public void searchFlight() {
-        driver.findElement(buttonSearch).click();
+        buttonSearch.click();
     }
 
     public void selectTakeMeAnywhere() {
-        driver.findElement(checkboxTakeMeAnywhere).click();
+        checkboxTakeMeAnywhere.click();
     }
 
     public void selectOneWayTicket() {
-        driver.findElement(radiobuttonOneWay).click();
+        radiobuttonOneWay.click();
     }
 
     public SearchPage selectReturnTicket() {
-        driver.findElement(radiobuttonReturn).click();
+        radiobuttonReturn.click();
         return this;
     }
 
     public void selectCurrency(String currencyCode) {
-        Select currency = new Select(driver.findElement(listCurrency));
+        Select currency = new Select(listCurrency);
         currency.selectByValue(currencyCode); //Selecting correct month & year from list
     }
 
@@ -94,7 +130,7 @@ public class SearchPage {
         String month = date[1];
         String year = date[2];
         String departureYearMonth = year + month;
-        Select departureMonth = new Select(driver.findElement(listDepartureMonth));
+        Select departureMonth = new Select(listDepartureMonth);
         departureMonth.selectByValue(departureYearMonth); //Selecting correct month & year from list
         driver.findElement(By.xpath("//table[@class='dep']//td[text()=" + Integer.valueOf(day).toString() + "]")).click();
     }
@@ -105,13 +141,13 @@ public class SearchPage {
         String month = date[1];
         String year = date[2];
         String returnYearMonth = year + month;
-        Select returnMonth = new Select(driver.findElement(listReturnMonth));
+        Select returnMonth = new Select(listReturnMonth);
         returnMonth.selectByValue(returnYearMonth); //Selecting correct month & year from list
         driver.findElement(By.xpath("//table[@class='arr']//td[text()=" + Integer.valueOf(day).toString() + "]")).click();
     }
 
     public void showAdvancedSearchParameters() throws InterruptedException {
-        driver.findElement(buttonAdvancedSearchParameters).click();
+        buttonAdvancedSearchParameters.click();
         Thread.sleep(1000);
     }
 

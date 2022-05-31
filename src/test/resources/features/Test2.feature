@@ -2,8 +2,7 @@ Feature: AZair OW Flight test no. 2
 
   @Test2
   Scenario: AZair OW Flight test no. 2
-    Given Browser is open
-#    And   User is on AZair search page
+    Given Browser is open on AZair homepage
     When  Select one way ticket
     And   Select source airport: "BER"
     And   Select destination airport "MAD"

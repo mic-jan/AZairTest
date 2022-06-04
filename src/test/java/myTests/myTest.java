@@ -2,21 +2,17 @@ package myTests;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.ResultPage;
 import pageObjects.RyanAirPage;
 import pageObjects.SearchPage;
-import pageObjects.WizzAirPage;
 
 public class myTest {
     ChromeDriver driver;
     SearchPage searchPage;
     ResultPage resultPage;
     RyanAirPage ryanAirPage;
-    WizzAirPage wizzAirPage;
 
     @Before
     void setUp() {
@@ -25,8 +21,6 @@ public class myTest {
         searchPage = new SearchPage(driver);
         resultPage = new ResultPage(driver);
         ryanAirPage = new RyanAirPage(driver);
-        wizzAirPage = new WizzAirPage(driver);
-
     }
 
     @Test

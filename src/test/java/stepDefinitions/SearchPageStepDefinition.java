@@ -17,8 +17,7 @@ public class SearchPageStepDefinition {
         searchPage = new SearchPage(driverClass.getDriver());
     }
 
-
-    @Given("Browser is open")
+    @Given("Browser is open on AZair homepage")
     public void browserIsOpen() {
         searchPage.openAZAir();
     }
@@ -85,7 +84,6 @@ public class SearchPageStepDefinition {
     public void performSearch() throws InterruptedException {
         Thread.sleep(500);
         searchPage.searchFlight();
-
     }
 
     @And("User is navigated to result page")

@@ -42,6 +42,18 @@ public class SearchPage {
     @FindBy(id = "showMoreParams")
     private WebElement buttonAdvancedSearchParameters;
 
+    @FindBy(id = "minHourOutbound")
+    private WebElement inputOutboundDepartureTimeMin;
+
+    @FindBy(id = "maxHourOutbound")
+    private WebElement inputOutboundDepartureTimeMax;
+
+    @FindBy(id = "minHourInbound")
+    private WebElement inputInboundDepartureTimeMin;
+
+    @FindBy(id = "maxHourInbound")
+    private WebElement inputInboundDepartureTimeMax;
+
     @FindBy(name = "adults")
     private WebElement listAdults;
 
@@ -184,5 +196,19 @@ public class SearchPage {
         Select numberOfInfants = new Select(listInfants);
         numberOfInfants.selectByValue(infants);
 
+    }
+
+    public void setOutboundDepartureTime(String outboundDepartureTimeMin, String outboundDepartureTimeMax) {
+        inputOutboundDepartureTimeMin.clear();
+        inputOutboundDepartureTimeMin.sendKeys(outboundDepartureTimeMin);
+        inputOutboundDepartureTimeMax.clear();
+        inputOutboundDepartureTimeMax.sendKeys(outboundDepartureTimeMax);
+    }
+
+    public void setInboundDepartureTime(String inboundDepartureTimeMin, String inboundDepartureTimeMax) {
+        inputInboundDepartureTimeMin.clear();
+        inputInboundDepartureTimeMin.sendKeys(inboundDepartureTimeMin);
+        inputInboundDepartureTimeMax.clear();
+        inputInboundDepartureTimeMax.sendKeys(inboundDepartureTimeMax);
     }
 }

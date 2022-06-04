@@ -3,9 +3,6 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import pageObjects.ResultPage;
 import pageObjects.SearchPage;
 import stepDefinitions.core.DriverClass;
 
@@ -107,5 +104,15 @@ public class SearchPageStepDefinition {
     @And("Set number of travellers to {string} adults, {string} children, {string} infants")
     public void setNumberOfTravellers(String adults, String children, String infants) {
         searchPage.setNumberOfTravellers(adults, children, infants);
+    }
+
+    @And("Departure time of outbound flight must be between {string} and {string}")
+    public void setOutboundDepartureTime(String outboundDepartureTimeMin, String outboundDepartureTimeMax) {
+        searchPage.setOutboundDepartureTime(outboundDepartureTimeMin, outboundDepartureTimeMax);
+    }
+
+    @And("Departure time of inbound flight must be between {string} and {string}")
+    public void setInboundDepartureTime(String inboundDepartureTimeMin, String inboundDepartureTimeMax) {
+        searchPage.setInboundDepartureTime(inboundDepartureTimeMin, inboundDepartureTimeMax);
     }
 }

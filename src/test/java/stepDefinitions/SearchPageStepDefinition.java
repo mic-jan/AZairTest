@@ -103,4 +103,9 @@ public class SearchPageStepDefinition {
         searchPage.selectWeekdays(departureDays, returnDays);
         Thread.sleep(1000);
     }
+
+    @And("Set number of travellers to {string} adults, {string} children, {string} infants")
+    public void setNumberOfTravellers(String adults, String children, String infants) {
+        searchPage.setNumberOfTravellers(adults, children, infants);
+    }
 }

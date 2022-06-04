@@ -42,6 +42,15 @@ public class SearchPage {
     @FindBy(id = "showMoreParams")
     private WebElement buttonAdvancedSearchParameters;
 
+    @FindBy(name = "adults")
+    private WebElement listAdults;
+
+    @FindBy(name = "children")
+    private WebElement listChildren;
+
+    @FindBy(name = "infants")
+    private WebElement listInfants;
+
 //    TO DO: Delete after implementing page factory
 //    By buttonSearch = By.xpath("//input[@value='Search']");
 //    By checkboxTakeMeAnywhere = By.xpath("//input[@name='anywhere']");
@@ -165,5 +174,15 @@ public class SearchPage {
 
     public void openAZAir() {
         driver.get("https://www.azair.eu");
+    }
+
+    public void setNumberOfTravellers(String adults, String children, String infants) {
+        Select numberOfAdults = new Select(listAdults);
+        numberOfAdults.selectByValue(adults);
+        Select numberOfChildren = new Select(listChildren);
+        numberOfChildren.selectByValue(children);
+        Select numberOfInfants = new Select(listInfants);
+        numberOfInfants.selectByValue(infants);
+
     }
 }

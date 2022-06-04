@@ -24,4 +24,9 @@ public class ResultPageStepDefinition {
         resultPage.bookFirstResult();
         Thread.sleep(10000);
     }
+
+    @And("Switch to second tab")
+    public void switchToSecondTab() {
+        resultPage.switchToSecondTab();
+    }
 }

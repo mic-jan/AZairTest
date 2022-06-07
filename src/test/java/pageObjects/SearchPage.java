@@ -186,7 +186,7 @@ public class SearchPage {
     }
 
     public void openAZAir() {
-        WebDriverManager.chromedriver().setup();
+//        WebDriverManager.chromedriver().setup();
         driver.get("https://www.azair.eu");
     }
 

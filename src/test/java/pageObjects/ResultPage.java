@@ -52,7 +52,6 @@ public class ResultPage {
         browserWindows.remove(parentWindow);
         String newWindow = browserWindows.iterator().next();
         driver.switchTo().window(newWindow);
-        System.out.println("ELO");
 //        driver.switchTo().window(browserTabs.get(1));
     }
 }

@@ -1,7 +1,7 @@
 Feature: AZair OW Flight test no. 7 Departure time
 
   @Test7
-  Scenario: AZair OW Flight test no. 6
+  Scenario: AZair OW Flight test no. 7
     Given Browser is open on AZair homepage
 #    When  Select one way ticket
     And   Select source airport: "WRO"

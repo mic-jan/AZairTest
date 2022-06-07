@@ -1,6 +1,6 @@
 package stepDefinitions.core;
 
-import org.junit.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -8,8 +8,9 @@ public class DriverClass {
 
     WebDriver driver;
 
+
     public DriverClass() {
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }

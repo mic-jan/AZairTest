@@ -1,5 +1,6 @@
 package pageObjects;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -185,6 +186,7 @@ public class SearchPage {
     }
 
     public void openAZAir() {
+        WebDriverManager.chromedriver().setup();
         driver.get("https://www.azair.eu");
     }
 

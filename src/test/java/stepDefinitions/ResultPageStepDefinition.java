@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import pageObjects.ResultPage;
 import stepDefinitions.core.DriverClass;
 
@@ -26,5 +27,16 @@ public class ResultPageStepDefinition {
     @And("Switch to second tab")
     public void switchToSecondTab() {
         resultPage.switchToSecondTab();
+    }
+
+    @And("No flights are found")
+    public void noFlightsAreFound() {
+        resultPage.noFlightsAreFound();
+    }
+
+    @Then("Book random result")
+    public void bookRandomResult() throws InterruptedException {
+        resultPage.bookRandomResult();
+        Thread.sleep(1000);
     }
 }

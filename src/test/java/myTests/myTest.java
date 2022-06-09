@@ -15,7 +15,7 @@ public class myTest {
     RyanAirPage ryanAirPage;
 
     @Before
-    void setUp() {
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver","C:\\Programowanie\\chromedriver.exe");
         driver = new ChromeDriver();
         searchPage = new SearchPage(driver);
@@ -37,7 +37,7 @@ public class myTest {
     }
 
     @After
-    void tearDown() {
+    public void tearDown() {
         driver.quit();
     }
 

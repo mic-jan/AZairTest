@@ -79,7 +79,7 @@ public class SearchPageStepDefinition {
 
     @And("Perform search")
     public void performSearch() throws InterruptedException {
-        Thread.sleep(500);
+        Thread.sleep(1000);
         searchPage.searchFlight();
     }
 

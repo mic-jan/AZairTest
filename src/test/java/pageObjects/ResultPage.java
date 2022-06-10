@@ -1,6 +1,6 @@
 package pageObjects;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -63,7 +63,7 @@ public class ResultPage {
     }
 
     public void noFlightsAreFound() {
-        Assert.assertTrue("There are flight results", divNoResults.isDisplayed());
+        Assertions.assertTrue(divNoResults.isDisplayed());
     }
 
     public void bookRandomResult() throws InterruptedException {
@@ -72,9 +72,11 @@ public class ResultPage {
         hideAd.click();
         Thread.sleep(2500);
         divResults.get(resultNumber - 1).click();
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        String script = "window.scrollBy(0, 300);";
-        js.executeScript(script);
+        if (resultNumber > 5) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            String script = "window.scrollBy(0, 300);";
+            js.executeScript(script);
+        }
         Thread.sleep(1000);
         divBookResults.get(resultNumber - 1).click();
         Thread.sleep(5000);

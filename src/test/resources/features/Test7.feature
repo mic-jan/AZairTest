@@ -15,7 +15,7 @@ Feature: AZair OW Flight test no. 7 Departure time
     And   Select currency "PLN"
     And   Perform search
     And   User is navigated to result page
-#    And   Results are displayed
-#    Then  Book cheapest result
-#    And   Switch to second tab
-#    And   Accept RyanAir page cookies
+    And   Results are displayed
+    Then  Book cheapest result
+    And   Switch to second tab
+    And   Accept RyanAir page cookies

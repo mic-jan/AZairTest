@@ -7,7 +7,7 @@ Feature: Book random flight from result list
     And   Select source airport: "KRK"
     And   Select destination airport "STN"
     And   Select soonest departure date "01.07.2022"
-    And   Select latest departure date "10.07.2022"
+    And   Select latest departure date "05.07.2022"
     And   Select maximum number of changes 0
     And   Select currency "PLN"
     And   Perform search

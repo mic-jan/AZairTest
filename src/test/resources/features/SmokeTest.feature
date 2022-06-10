@@ -1,6 +1,6 @@
 Feature: AZair smoke test
 
-  @SmokeTest
+  @Test0 @SmokeTest
   Scenario: AZair smoke test
     Given Browser is open on AZair homepage
     When  Select source airport: "WRO"

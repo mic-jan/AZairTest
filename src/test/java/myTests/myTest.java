@@ -1,7 +1,7 @@
 package myTests;
 
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.ResultPage;
@@ -14,8 +14,8 @@ public class myTest {
     ResultPage resultPage;
     RyanAirPage ryanAirPage;
 
-    @Before
-    void setUp() {
+    @BeforeEach
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver","C:\\Programowanie\\chromedriver.exe");
         driver = new ChromeDriver();
         searchPage = new SearchPage(driver);
@@ -36,8 +36,8 @@ public class myTest {
         resultPage.bookFirstResult();
     }
 
-    @After
-    void tearDown() {
+    @AfterEach
+    public void tearDown() {
         driver.quit();
     }
 

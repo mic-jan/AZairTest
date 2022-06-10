@@ -1,10 +1,8 @@
-Feature: AZair smoke test
+Feature: Smoke test with prepopulated data
 
   @Test0 @SmokeTest
-  Scenario: AZair smoke test
+  Scenario: Smoke test with prepopulated data
     Given Browser is open on AZair homepage
-    When  Select source airport: "WRO"
-    And   Select Take Me Anywhere
-    And   Perform search
+    When  Perform search
     Then  User is navigated to result page
-    And   Book cheapest result
+    And   Close browser window

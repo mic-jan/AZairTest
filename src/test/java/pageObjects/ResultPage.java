@@ -1,6 +1,6 @@
 package pageObjects;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -63,7 +63,7 @@ public class ResultPage {
     }
 
     public void noFlightsAreFound() {
-        Assert.assertTrue("There are flight results", divNoResults.isDisplayed());
+        Assertions.assertTrue(divNoResults.isDisplayed());
     }
 
     public void bookRandomResult() throws InterruptedException {

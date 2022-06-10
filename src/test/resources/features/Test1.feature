@@ -1,7 +1,7 @@
-Feature: AZair RT Flight test no. 1
+Feature: Return flight on selected route and selected dates
 
   @Test1
-  Scenario: AZair RT Flight test no. 1
+  Scenario: Return flight on selected route and selected dates
     Given Browser is open on AZair homepage
     And   Select source airport: "BER"
     And   Select destination airport "MAD"
@@ -9,6 +9,7 @@ Feature: AZair RT Flight test no. 1
     And   Select return date "15.08.2022"
     And   Show advanced search parameters
     And   Select departure days "456" and return days "123"
-    And   Perform search
+    When  Perform search
     Then  User is navigated to result page
     And   Results are displayed
+    And   Close browser window

@@ -45,7 +45,7 @@ public class ResultPage {
         divFirstResult.click();
         Thread.sleep(1000);
         divBookFirstResult.click();
-        Thread.sleep(5000);
+        Thread.sleep(10000);
     }
 
     public int countResults() {
@@ -80,5 +80,9 @@ public class ResultPage {
         Thread.sleep(1000);
         divBookResults.get(resultNumber - 1).click();
         Thread.sleep(5000);
+    }
+
+    public void closeBrowserWindow() {
+        driver.quit();
     }
 }

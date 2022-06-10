@@ -39,4 +39,10 @@ public class ResultPageStepDefinition {
         resultPage.bookRandomResult();
         Thread.sleep(1000);
     }
+
+    @And("Close browser window")
+    public void closeBrowserWindow() throws InterruptedException {
+        Thread.sleep(3000);
+        resultPage.closeBrowserWindow();
+    }
 }

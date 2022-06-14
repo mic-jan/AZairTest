@@ -1,5 +1,6 @@
 package stepDefinitions.core;
 
+import io.cucumber.java.After;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,6 +18,11 @@ public class DriverClass {
 
     public WebDriver getDriver() {
         return this.driver;
+    }
+
+    @After
+    public void afterEachScenario(){
+        driver.quit();
     }
 
 }

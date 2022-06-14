@@ -15,4 +15,3 @@ Feature: Direct one-way flight on selected route
     Then  Book cheapest result
     And   Switch to second tab
     And   Accept RyanAir page cookies
-    And   Close browser window

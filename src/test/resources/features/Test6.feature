@@ -12,8 +12,6 @@ Feature: AZair OW Flight test no. 6 Ryanair
     And   Select maximum number of changes 0
     And   Select currency "PLN"
     And   Perform search
-    And   User is navigated to result page
-    And   Results are displayed
     Then  Book cheapest result
     And   Switch to second tab
     And   Accept RyanAir page cookies

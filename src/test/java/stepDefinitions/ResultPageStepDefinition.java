@@ -13,8 +13,15 @@ public class ResultPageStepDefinition {
         resultPage = new ResultPage(driverClass.getDriver());
     }
 
-    @And("Results are displayed")
-    public void resultsAreDisplayed() throws InterruptedException {
+    @And("I check if user is navigated to result page")
+    public void userIsOnResultPage() throws InterruptedException {
+        resultPage.userIsOnResultPage();
+        Thread.sleep(2500);
+    }
+
+    @And("I check if matching flights are found")
+    public void matchingFlightsAreFound() throws InterruptedException {
+        resultPage.matchingFlightsAreFound();
         Thread.sleep(1000);
     }
 
@@ -29,7 +36,7 @@ public class ResultPageStepDefinition {
         resultPage.switchToSecondTab();
     }
 
-    @And("No flights are found")
+    @And("I check if no flights are found")
     public void noFlightsAreFound() {
         resultPage.noFlightsAreFound();
     }
@@ -38,11 +45,5 @@ public class ResultPageStepDefinition {
     public void bookRandomResult() throws InterruptedException {
         resultPage.bookRandomResult();
         Thread.sleep(1000);
-    }
-
-    @And("Close browser window")
-    public void closeBrowserWindow() throws InterruptedException {
-        Thread.sleep(3000);
-        resultPage.closeBrowserWindow();
     }
 }

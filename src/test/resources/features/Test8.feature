@@ -8,5 +8,5 @@ Feature: Search with no results
     And   Select destination airport "WMI"
     And   Select maximum number of changes 0
     And   Perform search
-    Then  User is navigated to result page
-    And   No flights are found
+    Then  I check if user is navigated to result page
+    And   I check if no flights are found

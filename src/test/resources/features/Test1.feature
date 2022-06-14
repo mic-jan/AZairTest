@@ -12,4 +12,3 @@ Feature: Return flight on selected route and selected dates
     When  Perform search
     Then  User is navigated to result page
     And   Results are displayed
-    And   Close browser window

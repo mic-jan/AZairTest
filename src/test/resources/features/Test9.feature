@@ -16,4 +16,3 @@ Feature: Book random flight from result list
     Then  Book random result
     And   Switch to second tab
     And   Accept RyanAir page cookies
-    And   Close browser window

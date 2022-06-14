@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"stepDefinitions"},
-        tags = "@Test0 or @Test1 or @Test2 or @Test3 or @Test9", // to run multiple tags use "or"
+        tags = "@Test0 or @Test1 or @Test2", // to run multiple tags use "or"
 //        publish = true, //publishing report online
         plugin = {
                 "pretty",

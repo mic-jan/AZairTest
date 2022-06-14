@@ -11,4 +11,3 @@ Feature: One-way flight on selected route and selected dates
     And   Select currency "PLN"
     When  Perform search
     Then  User is navigated to result page
-    And   Close browser window

@@ -18,4 +18,8 @@ public class RyanAirPageStepDefinition {
         Thread.sleep(7000);
     }
 
+    @And("I check if flights are available")
+    public void checkAvailablity() {
+        ryanAirPage.checkAvailablity();
+    }
 }

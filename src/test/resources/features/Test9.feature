@@ -11,8 +11,6 @@ Feature: Book random flight from result list
     And   Select maximum number of changes 0
     And   Select currency "PLN"
     And   Perform search
-    And   User is navigated to result page
-    And   Results are displayed
-    Then  Book random result
+    And   Book random result
     And   Switch to second tab
     And   Accept RyanAir page cookies

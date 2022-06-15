@@ -12,6 +12,5 @@ Feature: AZair OW Flight test no. 4
 #    And   Show advanced search parameters
 #    And   Select departure days "467" and return days "123"
     And   Perform search
-    And   User is navigated to result page
-    And   Results are displayed
-    Then  Book cheapest result
+    Then  I check if user is navigated to result page
+    And   Book cheapest result

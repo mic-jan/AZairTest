@@ -4,4 +4,4 @@ Feature: Smoke test with prepopulated data
   Scenario: Smoke test with prepopulated data
     Given Browser is open on AZair homepage
     When  Perform search
-    Then  User is navigated to result page
+    Then  I check if user is navigated to result page

@@ -35,6 +35,9 @@ public class ResultPage {
     @FindBy(xpath = "//*[name()='svg']")
     private WebElement hideAd;
 
+    @FindBy(xpath = "//a[contains(text(),'New search')]")
+    private WebElement linkNewSearch;
+
     public ResultPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
@@ -71,18 +74,24 @@ public class ResultPage {
         Thread.sleep(4000);
         hideAd.click();
         Thread.sleep(2500);
-        divResults.get(resultNumber - 1).click();
+        divResults.get(resultNumber).click();
         if (resultNumber > 5) {
             JavascriptExecutor js = (JavascriptExecutor) driver;
             String script = "window.scrollBy(0, 300);";
             js.executeScript(script);
         }
         Thread.sleep(1000);
-        divBookResults.get(resultNumber - 1).click();
+        divBookResults.get(resultNumber).click();
         Thread.sleep(5000);
     }
 
-    public void closeBrowserWindow() {
-        driver.quit();
+    public void userIsOnResultPage() {
+        String windowTitle = driver.getTitle();
+        System.out.println(windowTitle);
+        Assertions.assertTrue(linkNewSearch.isDisplayed());
+    }
+
+    public void matchingFlightsAreFound() {
+        Assertions.assertTrue(divResults.size()>0);
     }
 }

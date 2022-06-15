@@ -83,12 +83,6 @@ public class SearchPageStepDefinition {
         searchPage.searchFlight();
     }
 
-    @And("User is navigated to result page")
-    public void user_is_navigated_to_result_page() throws InterruptedException {
-        Thread.sleep(2500);
-    }
-
-
     @And("Show advanced search parameters")
     public void showAdvancedSearchParameters() throws InterruptedException {
         searchPage.showAdvancedSearchParameters();

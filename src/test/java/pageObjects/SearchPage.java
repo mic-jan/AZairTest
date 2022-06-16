@@ -1,6 +1,6 @@
 package pageObjects;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
 
 public class SearchPage {
     WebDriver driver;
@@ -64,6 +66,9 @@ public class SearchPage {
     @FindBy(name = "infants")
     private WebElement listInfants;
 
+    @FindBy(css = ".errCaption")
+    private List<WebElement> spanErrorMessage;
+
 //    TO DO: Delete after implementing page factory
 //    By buttonSearch = By.xpath("//input[@value='Search']");
 //    By checkboxTakeMeAnywhere = By.xpath("//input[@name='anywhere']");
@@ -85,35 +90,45 @@ public class SearchPage {
         driver.navigate().to(searchURL);
     }
 
-    public void selectSourceAirport(String sourceAirportCode) throws InterruptedException {
+//  Poprzednia, działająca wersja
+//    public void selectOrigin(String sourceAirportCode) throws InterruptedException {
+//        inputSourceAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
+//        inputSourceAirport.sendKeys(sourceAirportCode);
+////        Thread.sleep(1000);
+//        By buttonSourceAirport = By.xpath("//strong[text()='" + sourceAirportCode + "']//parent::span[@class='code']");
+//        driver.findElement(buttonSourceAirport).click();
+//    }
+
+    public void selectOrigin(String origin) throws InterruptedException {
         inputSourceAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
-        inputSourceAirport.sendKeys(sourceAirportCode);
-//        Thread.sleep(1000);
-        By buttonSourceAirport = By.xpath("//strong[text()='" + sourceAirportCode + "']//parent::span[@class='code']");
-        driver.findElement(buttonSourceAirport).click();
+        inputSourceAirport.sendKeys(origin);
+        inputSourceAirport.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER));
     }
 
-    public void selectSourceArea(String sourceArea) throws InterruptedException {
+    public void typeOrigin(String origin) throws InterruptedException {
         inputSourceAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
-        inputSourceAirport.sendKeys(sourceArea);
-//        Thread.sleep(1000);
-        By buttonSourceAirport = By.xpath("//span[@class='code' and text()='All airports']");
-        driver.findElement(buttonSourceAirport).click();
+        inputSourceAirport.sendKeys(origin);
+        inputSourceAirport.sendKeys(Keys.ENTER);
     }
 
-    public void selectDestinationAirport(String destinationAirportCode) throws InterruptedException {
+//  Stara działająca wersja
+//    public void selectDestination(String destinationAirportCode) throws InterruptedException {
+//        inputDestinationAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
+//        inputDestinationAirport.sendKeys(destinationAirportCode);
+//        By buttonDestinationAirport = By.xpath("//strong[text()='" + destinationAirportCode + "']//parent::span[@class='code']");
+//        driver.findElement(buttonDestinationAirport).click();
+//    }
+    public void selectDestination(String destination) throws InterruptedException {
         inputDestinationAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
-        inputDestinationAirport.sendKeys(destinationAirportCode);
-        By buttonDestinationAirport = By.xpath("//strong[text()='" + destinationAirportCode + "']//parent::span[@class='code']");
-        driver.findElement(buttonDestinationAirport).click();
+        inputDestinationAirport.sendKeys(destination);
+        inputDestinationAirport.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER));
     }
 
-    public void selectDestinationArea(String destinationArea) throws InterruptedException {
+    public void typeDestination(String destination) throws InterruptedException {
         inputDestinationAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
-        inputDestinationAirport.sendKeys(destinationArea);
-//        Thread.sleep(1000);
-        By buttonSourceAirport = By.xpath("//span[@class='code' and text()='All airports']");
-        driver.findElement(buttonSourceAirport).click();
+        inputDestinationAirport.sendKeys(destination);
+        inputDestinationAirport.sendKeys(Keys.ENTER);
+
     }
 
     public void searchFlight() {
@@ -212,5 +227,9 @@ public class SearchPage {
         inputInboundDepartureTimeMin.sendKeys(inboundDepartureTimeMin);
         inputInboundDepartureTimeMax.clear();
         inputInboundDepartureTimeMax.sendKeys(inboundDepartureTimeMax);
+    }
+
+    public void checkErrorMsg() {
+        Assertions.assertTrue(spanErrorMessage.size() >= 1, "Error message wasn't display");
     }
 }

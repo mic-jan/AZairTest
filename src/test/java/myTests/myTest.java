@@ -29,7 +29,7 @@ public class myTest {
         SearchPage searchPage = new SearchPage(driver);
         searchPage.goTo(searchURL);
         searchPage.selectOneWayTicket();
-        searchPage.selectSourceAirport("WRO");
+        searchPage.selectOrigin("WRO");
         searchPage.selectTakeMeAnywhere();
         searchPage.searchFlight();
         Thread.sleep(10000);

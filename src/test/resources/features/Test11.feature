@@ -4,7 +4,7 @@ Feature: Swap origin and destination on result page
   Scenario: Direct one-way flight on selected route
     Given Browser is open on AZair homepage
     When  Select one way ticket
-    And   Select source airport(s) from list: "southern Poland"
+    And   Select origin airport(s) from list: "southern Poland"
     And   Select destination airport(s) from list: "Mediterranean coa"
     And   Select soonest departure date "01.08.2022"
     And   Select latest departure date "05.08.2022"

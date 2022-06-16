@@ -102,7 +102,12 @@ public class SearchPage {
     public void selectOrigin(String origin) throws InterruptedException {
         inputSourceAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
         inputSourceAirport.sendKeys(origin);
-        inputSourceAirport.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER));
+        if (origin.length() == 3) {
+            By buttonOriginAirport = By.xpath("//strong[text()='" + origin + "']//parent::span[@class='code']");
+            driver.findElement(buttonOriginAirport).click();
+        } else {
+            inputSourceAirport.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER));
+        }
     }
 
     public void typeOrigin(String origin) throws InterruptedException {
@@ -119,9 +124,14 @@ public class SearchPage {
 //        driver.findElement(buttonDestinationAirport).click();
 //    }
     public void selectDestination(String destination) throws InterruptedException {
-        inputDestinationAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
+        inputDestinationAirport.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         inputDestinationAirport.sendKeys(destination);
-        inputDestinationAirport.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER));
+        if (destination.length() == 3) {
+            By buttonDestinationAirport = By.xpath("//strong[text()='" + destination + "']//parent::span[@class='code']");
+            driver.findElement(buttonDestinationAirport).click();
+        } else {
+            inputDestinationAirport.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER));
+        }
     }
 
     public void typeDestination(String destination) throws InterruptedException {

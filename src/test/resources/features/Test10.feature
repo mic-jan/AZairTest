@@ -4,7 +4,7 @@ Feature: Check if flight is available on airline's page
   Scenario: AZair OW Flight test no. 10
     Given Browser is open on AZair homepage
     When  Select one way ticket
-    And   Select source airport(s) from list: "WRO"
+    And   Select origin airport(s) from list: "WRO"
     And   Select destination airport(s) from list: "ALC"
     And   Select soonest departure date "16.06.2022"
     And   Select latest departure date "16.06.2022"

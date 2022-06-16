@@ -31,9 +31,9 @@ public class SearchPageStepDefinition {
         searchPage.selectOneWayTicket();
     }
 
-    @When("Select source airport\\(s) from list: {string}")
-    public void selectSourceAirport(String sourceAirport) throws InterruptedException {
-        searchPage.selectOrigin(sourceAirport);
+    @When("Select origin airport\\(s) from list: {string}")
+    public void selectOrigin(String origin) throws InterruptedException {
+        searchPage.selectOrigin(origin);
     }
 
     @And("Type origin: {string}")
@@ -42,8 +42,8 @@ public class SearchPageStepDefinition {
     }
 
     @And("Select destination airport\\(s) from list: {string}")
-    public void selectDestinationAirport(String destinationAirport) throws InterruptedException {
-        searchPage.selectDestination(destinationAirport);
+    public void selectDestination(String destination) throws InterruptedException {
+        searchPage.selectDestination(destination);
     }
 
     @And("Type destination: {string}")

@@ -4,7 +4,7 @@ Feature: One-way flight on selected route and selected dates
   Scenario Outline: One way flight on selected route and selected dates
     Given Browser is open on AZair homepage
     And   Select one way ticket
-    And   Select source airport(s) from list: <source>
+    And   Select origin airport(s) from list: <source>
     And   Select destination airport(s) from list: <destination>
     And   Select soonest departure date "01.08.2022"
     And   Select latest departure date "07.08.2022"

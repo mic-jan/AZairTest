@@ -4,7 +4,7 @@ Feature: AZair OW Flight test no. 7 Departure time
   Scenario: AZair OW Flight test no. 7
     Given Browser is open on AZair homepage
 #    When  Select one way ticket
-    And   Select source airport(s) from list: "WRO"
+    And   Select origin airport(s) from list: "WRO"
     And   Select destination airport(s) from list: "STN"
     And   Select soonest departure date "10.07.2022"
     And   Select latest departure date "15.08.2022"

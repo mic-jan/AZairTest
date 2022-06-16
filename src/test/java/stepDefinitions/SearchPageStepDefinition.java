@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.SearchPage;
 import stepDefinitions.core.DriverClass;
@@ -30,24 +31,24 @@ public class SearchPageStepDefinition {
         searchPage.selectOneWayTicket();
     }
 
-    @When("Select source airport: {string}")
-    public void selectSourceAirport(String sourceAirport) throws InterruptedException {
-        searchPage.selectSourceAirport(sourceAirport);
+    @When("Select origin airport\\(s) from list: {string}")
+    public void selectOrigin(String origin) throws InterruptedException {
+        searchPage.selectOrigin(origin);
     }
 
-    @And("Select source area: {string}")
-    public void selectSourceArea(String sourceArea) throws InterruptedException {
-        searchPage.selectSourceArea(sourceArea);
+    @And("Type origin: {string}")
+    public void typeOrigin(String sourceArea) throws InterruptedException {
+        searchPage.typeOrigin(sourceArea);
     }
 
-    @And("Select destination airport {string}")
-    public void selectDestinationAirport(String destinationAirport) throws InterruptedException {
-        searchPage.selectDestinationAirport(destinationAirport);
+    @And("Select destination airport\\(s) from list: {string}")
+    public void selectDestination(String destination) throws InterruptedException {
+        searchPage.selectDestination(destination);
     }
 
-    @And("Select destination area: {string}")
-    public void selectDestinationArea(String destinationArea) throws InterruptedException {
-        searchPage.selectDestinationArea(destinationArea);
+    @And("Type destination: {string}")
+    public void typeDestination(String destination) throws InterruptedException {
+        searchPage.typeDestination(destination);
     }
 
     @And("Select Take Me Anywhere")
@@ -108,5 +109,11 @@ public class SearchPageStepDefinition {
     @And("Departure time of inbound flight must be between {string} and {string}")
     public void setInboundDepartureTime(String inboundDepartureTimeMin, String inboundDepartureTimeMax) {
         searchPage.setInboundDepartureTime(inboundDepartureTimeMin, inboundDepartureTimeMax);
+    }
+
+    @Then("I check if error message is displayed")
+    public void checkErrorMsg() throws InterruptedException {
+        Thread.sleep(3000);
+        searchPage.checkErrorMsg();
     }
 }

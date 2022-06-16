@@ -35,7 +35,16 @@ public class ResultPage {
     @FindBy(xpath = "//*[name()='svg']")
     private WebElement hideAd;
 
-    @FindBy(xpath = "//a[contains(text(),'New search')]")
+//    @FindBy(xpath = "//a[contains(text(),'New search')]")
+//    private WebElement linkNewSearch;
+
+    @FindBy(xpath = "//span[@id='swap']/a")
+    private WebElement linkSwap;
+
+    @FindBy(name = "resultSubmit")
+    private WebElement inputSearch;
+
+    @FindBy(css = "a.nS")
     private WebElement linkNewSearch;
 
     public ResultPage(WebDriver driver) {
@@ -93,5 +102,20 @@ public class ResultPage {
 
     public void matchingFlightsAreFound() {
         Assertions.assertTrue(divResults.size()>0);
+    }
+
+    public void swapOriginAndDestination() throws InterruptedException {
+        linkSwap.click();
+        Thread.sleep(1000);
+    }
+
+    public void search() throws InterruptedException {
+        inputSearch.click();
+        Thread.sleep(3000);
+    }
+
+    public void returnToSearchPage() throws InterruptedException {
+        linkNewSearch.click();
+        Thread.sleep(7000);
     }
 }

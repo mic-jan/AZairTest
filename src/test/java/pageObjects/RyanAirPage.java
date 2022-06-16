@@ -16,7 +16,7 @@ public class RyanAirPage {
     private WebElement buttonAcceptCookies;
 
     @FindBy(xpath = "//p[contains(@class,'no-flights')]")
-    private WebElement pNoFlights;
+    private List<WebElement> pNoFlights;
 
     @FindBy(xpath = "//div[contains(text(),'Sold out')]")
     private List<WebElement> divsSoldOut;
@@ -34,9 +34,7 @@ public class RyanAirPage {
     }
 
     public void checkAvailablity() {
-        Assertions.assertFalse(pNoFlights.isDisplayed());
-        System.out.println("all flights: " + flightCards.size());
-        System.out.println("sold out   : " + divsSoldOut.size());
-        Assertions.assertNotEquals(divsSoldOut.size(), flightCards.size());
+        Assertions.assertFalse(pNoFlights.size() != 0, "There are no flights that day");
+        Assertions.assertNotEquals(divsSoldOut.size(), flightCards.size(), "All flights are sold out");
     }
 }

@@ -46,4 +46,19 @@ public class ResultPageStepDefinition {
         resultPage.bookRandomResult();
         Thread.sleep(1000);
     }
+
+    @And("Swap origin and destination on result page")
+    public void swapOriginAndDestination() throws InterruptedException {
+        resultPage.swapOriginAndDestination();
+    }
+
+    @And("Perform search on result page")
+    public void performSearchOnResultPage() throws InterruptedException {
+        resultPage.search();
+    }
+
+    @And("Return to search page")
+    public void returnToSearchPage() throws InterruptedException {
+        resultPage.returnToSearchPage();
+    }
 }

@@ -102,7 +102,6 @@ public class ResultPage {
 
     public void userIsOnResultPage() {
         String windowTitle = driver.getTitle();
-        System.out.println(windowTitle);
         Assertions.assertTrue(linkNewSearch.isDisplayed());
     }
 

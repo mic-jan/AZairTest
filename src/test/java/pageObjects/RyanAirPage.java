@@ -40,7 +40,6 @@ public class RyanAirPage {
 
     public void redirectionToRyanair() {
         String windowTitle = driver.getTitle();
-        System.out.println(windowTitle);
         Assertions.assertEquals(windowTitle, "Ryanair");
     }
 }

@@ -1,7 +1,7 @@
-Feature: 04. OW flight using country selection
+Feature: 04. One-way flight using country selection
 
   @Test_04 @All
-  Scenario: AZair OW Flight test no. 4
+  Scenario: One-way flight using country selection
     Given Browser is open on AZair homepage
     When  Select one way ticket
     And   Select origin airport(s) from list: "Poland"

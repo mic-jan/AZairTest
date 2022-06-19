@@ -1,7 +1,7 @@
 Feature: 09. Origin and destination provided as an area
 
   @Test_09 @All
-  Scenario: AZair OW Flight test no. 9
+  Scenario: Origin and destination provided as an area
     Given Browser is open on AZair homepage
     When  Select one way ticket
     And   Select origin airport(s) from list: "southern Poland"

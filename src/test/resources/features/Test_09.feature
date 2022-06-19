@@ -1,6 +1,6 @@
 Feature: 09. Origin and destination provided as an area
 
-  @Test9 @All
+  @Test_09 @All
   Scenario: AZair OW Flight test no. 9
     Given Browser is open on AZair homepage
     When  Select one way ticket

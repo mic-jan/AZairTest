@@ -1,6 +1,6 @@
 Feature: 03. Flight with take me anywhere option
 
-  @Test3 @All
+  @Test_03 @All
   Scenario: Flight with take me anywhere option
     Given Browser is open on AZair homepage
     When  Select one way ticket

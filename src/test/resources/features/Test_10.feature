@@ -1,6 +1,6 @@
 Feature: 10. Check if flight is available on Ryanair page
 
-  @Test10 @All
+  @Test_10 @All
   Scenario: Check if flight is available on Ryanair page
     Given Browser is open on AZair homepage
     When  Select one way ticket

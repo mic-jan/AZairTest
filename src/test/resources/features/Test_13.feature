@@ -1,6 +1,6 @@
 Feature: 13. Modify search query on result page
 
-  @Test13 @All
+  @Test_13 @All
   Scenario: Modify search query on result page
     Given Browser is open on AZair homepage
     When  Select one way ticket

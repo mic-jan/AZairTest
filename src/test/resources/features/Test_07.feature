@@ -1,6 +1,6 @@
 Feature: 07. Departure time limitations
 
-  @Test7 @All
+  @Test_07 @All
   Scenario: AZair OW Flight test no. 7
     Given Browser is open on AZair homepage
     And   Select origin airport(s) from list: "KRK"

@@ -1,7 +1,7 @@
-Feature: Direct one-way flight on selected route
+Feature: 03. Flight with take me anywhere option
 
   @Test3 @All
-  Scenario: Direct one-way flight on selected route
+  Scenario: Flight with take me anywhere option
     Given Browser is open on AZair homepage
     When  Select one way ticket
     And   Select origin airport(s) from list: "EDI"
@@ -11,5 +11,6 @@ Feature: Direct one-way flight on selected route
     And   Select maximum number of changes 2
     And   Allow overnight changes
     And   Perform search
-    Then  Book cheapest result
-    And   I check if user is redirected to airline page
+    And   Book cheapest result
+    And   Switch to second tab
+    Then  I check if user is redirected to airline page

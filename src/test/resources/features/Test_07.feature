@@ -1,9 +1,8 @@
-Feature: AZair OW Flight test no. 7 Departure time
+Feature: 07. Departure time limitations
 
   @Test7 @All
   Scenario: AZair OW Flight test no. 7
     Given Browser is open on AZair homepage
-#    When  Select one way ticket
     And   Select origin airport(s) from list: "KRK"
     And   Select destination airport(s) from list: "STN"
     And   Select soonest departure date "05.08.2022"

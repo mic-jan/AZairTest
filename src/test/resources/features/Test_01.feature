@@ -1,4 +1,4 @@
-Feature: Smoke test with prepopulated data
+Feature: 01. Smoke test with prepopulated data
 
   @Test1 @All
   Scenario: Smoke test with prepopulated data

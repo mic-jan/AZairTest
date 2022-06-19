@@ -1,4 +1,4 @@
-Feature: AZair OW Flight test no. 4
+Feature: 04. OW flight using country selection
 
   @Test4 @All
   Scenario: AZair OW Flight test no. 4
@@ -9,8 +9,7 @@ Feature: AZair OW Flight test no. 4
     And   Select soonest departure date "01.09.2022"
     And   Select latest departure date "15.10.2022"
     And   Select maximum number of changes 0
-#    And   Show advanced search parameters
-#    And   Select departure days "467" and return days "123"
     And   Perform search
     And   Book random result
+    And   Switch to second tab
     Then  I check if user is redirected to airline page

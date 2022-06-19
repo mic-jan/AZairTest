@@ -1,4 +1,4 @@
-Feature: Modify search query on result page
+Feature: 13. Modify search query on result page
 
   @Test13 @All
   Scenario: Modify search query on result page
@@ -15,6 +15,3 @@ Feature: Modify search query on result page
     And   Select destination airport(s) from list: "MAD" on result page
     And   Perform search on result page
     Then  I check if flights from "KRK" to "MAD" were displayed
-#    Then  Book cheapest result
-#    And   Switch to second tab
-#    And   Accept RyanAir page cookies

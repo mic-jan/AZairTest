@@ -1,4 +1,4 @@
-Feature: One-way flight on selected route and selected dates
+Feature: 02. One-way flight on selected route and selected dates
 
   @Test2 @All
   Scenario Outline: One way flight on selected route and selected dates

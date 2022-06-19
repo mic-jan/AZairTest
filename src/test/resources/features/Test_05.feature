@@ -1,4 +1,4 @@
-Feature: Return flight on selected route and selected dates
+Feature: 05. Return flight on selected weekdays
 
   @Test5 @All
   Scenario: Return flight on selected route and selected dates

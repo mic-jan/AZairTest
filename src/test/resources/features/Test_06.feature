@@ -1,4 +1,4 @@
-Feature: AZair OW Flight test no. 6 Ryanair
+Feature: 06. Multiple passengers selected
 
   @Test6 @All
   Scenario: AZair OW Flight test no. 6
@@ -8,7 +8,7 @@ Feature: AZair OW Flight test no. 6 Ryanair
     And   Select destination airport(s) from list: "Paris"
     And   Select soonest departure date "10.07.2022"
     And   Select latest departure date "25.07.2022"
-    And   Set number of travellers to "5" adults, "0" children, "0" infants
+    And   Set number of travellers to "5" adults, "1" children, "1" infants
     And   Select maximum number of changes 0
     And   Select currency "PLN"
     And   Perform search

@@ -79,7 +79,7 @@ public class ResultPageStepDefinition {
 
     @And("I check if user is redirected to airline page")
     public void userRedirected() throws InterruptedException {
-        Thread.sleep(8000);
+        Thread.sleep(12000);
         resultPage.userRedirected();
     }
 }

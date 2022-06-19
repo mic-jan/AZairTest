@@ -1,11 +1,11 @@
-Feature: Book random flight from result list
+Feature: 09. Origin and destination provided as an area
 
   @Test9 @All
   Scenario: AZair OW Flight test no. 9
     Given Browser is open on AZair homepage
     When  Select one way ticket
-    And   Select origin airport(s) from list: "KRK"
-    And   Select destination airport(s) from list: "STN"
+    And   Select origin airport(s) from list: "southern Poland"
+    And   Select destination airport(s) from list: "Mediterranean coast"
     And   Select soonest departure date "01.07.2022"
     And   Select latest departure date "05.07.2022"
     And   Select maximum number of changes 0
@@ -13,4 +13,4 @@ Feature: Book random flight from result list
     And   Perform search
     And   Book random result
     And   Switch to second tab
-    And   Accept RyanAir page cookies
+    Then  I check if user is redirected to airline page

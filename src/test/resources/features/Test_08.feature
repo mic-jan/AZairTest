@@ -1,7 +1,7 @@
-Feature: Search with no results
+Feature: 08. Incorrect route - no results found
 
   @Test8 @All
-  Scenario: Search with no results
+  Scenario: Search with no matching results found
     Given Browser is open on AZair homepage
     When  Select one way ticket
     And   Select origin airport(s) from list: "WAW"

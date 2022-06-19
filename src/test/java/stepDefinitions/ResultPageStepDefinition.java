@@ -61,4 +61,25 @@ public class ResultPageStepDefinition {
     public void returnToSearchPage() throws InterruptedException {
         resultPage.returnToSearchPage();
     }
+
+    @And("Select origin airport\\(s) from list: {string} on result page")
+    public void selectOrigin(String origin) {
+        resultPage.selectOrigin(origin);
+    }
+
+    @And("Select destination airport\\(s) from list: {string} on result page")
+    public void selectDestination(String destination) {
+        resultPage.selectDestination(destination);
+    }
+
+    @Then("I check if flights from {string} to {string} were displayed")
+    public void correctRouteIsDisplayed(String origin, String destination) {
+        resultPage.correctRouteIsDisplayed(origin, destination);
+    }
+
+    @And("I check if user is redirected to airline page")
+    public void userRedirected() throws InterruptedException {
+        Thread.sleep(12000);
+        resultPage.userRedirected();
+    }
 }

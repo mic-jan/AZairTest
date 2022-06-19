@@ -1,4 +1,4 @@
-Feature: User enters non-existing airport parameter
+Feature: 12. User enters non-existing airport parameter
 
   @Test12 @All
   Scenario: One way flight on selected route and selected dates

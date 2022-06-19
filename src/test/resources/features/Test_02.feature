@@ -1,7 +1,7 @@
-Feature: 02. One-way flight on between two airports
+Feature: 02. One-way flight between two airports
 
   @Test_02 @All
-  Scenario Outline: One way flight on selected route and selected dates
+  Scenario Outline: One-way flight between two airports
     Given Browser is open on AZair homepage
     And   Select one way ticket
     And   Select origin airport(s) from list: <source>

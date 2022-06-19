@@ -1,7 +1,7 @@
-Feature: 03. Flight with take me anywhere option
+Feature: 03. Flight with Take Me Anywhere option selected
 
   @Test_03 @All
-  Scenario: Flight with take me anywhere option
+  Scenario: Flight with Take Me Anywhere option selected
     Given Browser is open on AZair homepage
     When  Select one way ticket
     And   Select origin airport(s) from list: "EDI"

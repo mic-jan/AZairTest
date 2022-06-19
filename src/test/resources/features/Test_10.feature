@@ -11,6 +11,7 @@ Feature: 10. Check if flight is available on Ryanair page
     And   Select maximum number of changes 0
     And   Select currency "random"
     And   Perform search
+    And   I check if flights from "WRO" to "ALC" were displayed
     And   Book random result
     And   Switch to second tab
     And   Accept RyanAir page cookies

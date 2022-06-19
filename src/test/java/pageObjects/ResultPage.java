@@ -68,7 +68,6 @@ public class ResultPage {
     }
 
     public int countResults() {
-        System.out.println("Results number: " + divResults.size());
         return divResults.size();
     }
 

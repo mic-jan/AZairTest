@@ -1,6 +1,6 @@
 Feature: 04. OW flight using country selection
 
-  @Test4 @All
+  @Test_04 @All
   Scenario: AZair OW Flight test no. 4
     Given Browser is open on AZair homepage
     When  Select one way ticket

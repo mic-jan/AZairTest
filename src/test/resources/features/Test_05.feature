@@ -1,6 +1,6 @@
 Feature: 05. Return flight on selected weekdays
 
-  @Test5 @All
+  @Test_05 @All
   Scenario: Return flight on selected route and selected dates
     Given Browser is open on AZair homepage
     When  Select origin airport(s) from list: "PRG"

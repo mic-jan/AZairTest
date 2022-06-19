@@ -1,6 +1,6 @@
 Feature: 08. Incorrect route - no results found
 
-  @Test8 @All
+  @Test_08 @All
   Scenario: Search with no matching results found
     Given Browser is open on AZair homepage
     When  Select one way ticket

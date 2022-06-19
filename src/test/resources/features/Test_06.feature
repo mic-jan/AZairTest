@@ -1,6 +1,6 @@
 Feature: 06. Multiple passengers selected
 
-  @Test6 @All
+  @Test_06 @All
   Scenario: AZair OW Flight test no. 6
     Given Browser is open on AZair homepage
     When  Select one way ticket

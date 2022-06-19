@@ -24,5 +24,4 @@ public class DriverClass {
     public void afterEachScenario(){
         driver.quit();
     }
-
 }

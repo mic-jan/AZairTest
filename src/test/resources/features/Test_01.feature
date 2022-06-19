@@ -1,6 +1,6 @@
 Feature: 01. Smoke test with prepopulated data
 
-  @Test1 @All
+  @Test_01 @All
   Scenario: Smoke test with prepopulated data
     Given Browser is open on AZair homepage
     When  Perform search

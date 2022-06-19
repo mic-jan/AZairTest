@@ -1,6 +1,6 @@
 Feature: 11. Swap origin and destination on result page
 
-  @Test11 @All
+  @Test_11 @All
   Scenario: Swap origin and destination on result page
     Given Browser is open on AZair homepage
     When  Select one way ticket

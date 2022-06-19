@@ -1,6 +1,6 @@
 Feature: 02. One-way flight on selected route and selected dates
 
-  @Test2 @All
+  @Test_02 @All
   Scenario Outline: One way flight on selected route and selected dates
     Given Browser is open on AZair homepage
     And   Select one way ticket

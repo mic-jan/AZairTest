@@ -13,18 +13,6 @@ public class ResultPageStepDefinition {
         resultPage = new ResultPage(driverClass.getDriver());
     }
 
-    @And("I check if user is navigated to result page")
-    public void userIsOnResultPage() throws InterruptedException {
-        resultPage.userIsOnResultPage();
-        Thread.sleep(2500);
-    }
-
-    @And("I check if matching flights are found")
-    public void matchingFlightsAreFound() throws InterruptedException {
-        resultPage.matchingFlightsAreFound();
-        Thread.sleep(1000);
-    }
-
     @And("Book cheapest result")
     public void bookCheapestResult() throws InterruptedException {
         resultPage.bookFirstResult();
@@ -34,11 +22,6 @@ public class ResultPageStepDefinition {
     @And("Switch to second tab")
     public void switchToSecondTab() {
         resultPage.switchToSecondTab();
-    }
-
-    @And("I check if no flights are found")
-    public void noFlightsAreFound() {
-        resultPage.noFlightsAreFound();
     }
 
     @Then("Book random result")
@@ -72,6 +55,18 @@ public class ResultPageStepDefinition {
         resultPage.selectDestination(destination);
     }
 
+    @And("I check if user is navigated to result page")
+    public void userIsOnResultPage() throws InterruptedException {
+        resultPage.userIsOnResultPage();
+        Thread.sleep(2500);
+    }
+
+    @And("I check if matching flights are found")
+    public void matchingFlightsAreFound() throws InterruptedException {
+        resultPage.matchingFlightsAreFound();
+        Thread.sleep(1000);
+    }
+
     @Then("I check if flights from {string} to {string} were displayed")
     public void correctRouteIsDisplayed(String origin, String destination) {
         resultPage.correctRouteIsDisplayed(origin, destination);
@@ -81,5 +76,10 @@ public class ResultPageStepDefinition {
     public void userRedirected() throws InterruptedException {
         Thread.sleep(12000);
         resultPage.userRedirected();
+    }
+
+    @And("I check if no flights are found")
+    public void noFlightsAreFound() {
+        resultPage.noFlightsAreFound();
     }
 }

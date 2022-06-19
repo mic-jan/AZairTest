@@ -22,12 +22,6 @@ public class SearchPageStepDefinition {
         searchPage.openAZAir();
     }
 
-    @Given("User is on AZair search page")
-    public void userIsOnAZairSearchPage() {
-        String searchURL = "https://www.azair.eu/";
-        searchPage.goTo(searchURL);
-    }
-
     @When("Select one way ticket")
     public void selectOneWayTicket() {
         searchPage.selectOneWayTicket();
@@ -119,14 +113,14 @@ public class SearchPageStepDefinition {
         searchPage.setInboundDepartureTime(inboundDepartureTimeMin, inboundDepartureTimeMax);
     }
 
+    @And("Allow overnight changes")
+    public void allowOvernightChanges() {
+        searchPage.allowOvernightChanges();
+    }
+
     @Then("I check if error message is displayed")
     public void checkErrorMsg() throws InterruptedException {
         Thread.sleep(3000);
         searchPage.checkErrorMsg();
-    }
-
-    @And("Allow overnight changes")
-    public void allowOvernightChanges() {
-        searchPage.allowOvernightChanges();
     }
 }

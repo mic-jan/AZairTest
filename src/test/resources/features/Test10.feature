@@ -9,7 +9,7 @@ Feature: Check if flight is available on airline's page
     And   Select soonest departure date "16.06.2022"
     And   Select latest departure date "16.06.2022"
     And   Select maximum number of changes 0
-    And   Select currency "EUR"
+    And   Select currency "random"
     And   Perform search
     And   Book random result
     And   Switch to second tab

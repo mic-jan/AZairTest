@@ -7,6 +7,8 @@ import io.cucumber.java.en.When;
 import pageObjects.SearchPage;
 import stepDefinitions.core.DriverClass;
 
+import java.util.Random;
+
 public class SearchPageStepDefinition {
 
     SearchPage searchPage;
@@ -70,6 +72,11 @@ public class SearchPageStepDefinition {
 
     @And("Select currency {string}")
     public void selectCurrency(String currencyCode) throws InterruptedException {
+        if (currencyCode.equals("random")){
+            String[] currency = {"EUR", "USD", "GBP", "CZK", "PLN", "HUF", "RUB", "BYR"};
+            int rnd = new Random().nextInt(currency.length);
+            currencyCode = currency[rnd];
+        }
         searchPage.selectCurrency(currencyCode);
     }
 
@@ -82,6 +89,7 @@ public class SearchPageStepDefinition {
     public void performSearch() throws InterruptedException {
         Thread.sleep(1000);
         searchPage.searchFlight();
+        Thread.sleep(2000);
     }
 
     @And("Show advanced search parameters")
@@ -115,5 +123,10 @@ public class SearchPageStepDefinition {
     public void checkErrorMsg() throws InterruptedException {
         Thread.sleep(3000);
         searchPage.checkErrorMsg();
+    }
+
+    @And("Allow overnight changes")
+    public void allowOvernightChanges() {
+        searchPage.allowOvernightChanges();
     }
 }

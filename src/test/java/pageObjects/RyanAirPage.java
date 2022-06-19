@@ -37,4 +37,10 @@ public class RyanAirPage {
         Assertions.assertFalse(pNoFlights.size() != 0, "There are no flights that day");
         Assertions.assertNotEquals(divsSoldOut.size(), flightCards.size(), "All flights are sold out");
     }
+
+    public void redirectionToRyanair() {
+        String windowTitle = driver.getTitle();
+        System.out.println(windowTitle);
+        Assertions.assertEquals(windowTitle, "Ryanair");
+    }
 }

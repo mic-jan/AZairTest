@@ -66,20 +66,11 @@ public class SearchPage {
     @FindBy(name = "infants")
     private WebElement listInfants;
 
+    @FindBy(name = "nextday")
+    private WebElement checkboxOvernight;
+
     @FindBy(css = ".errCaption")
     private List<WebElement> spanErrorMessage;
-
-//    TO DO: Delete after implementing page factory
-//    By buttonSearch = By.xpath("//input[@value='Search']");
-//    By checkboxTakeMeAnywhere = By.xpath("//input[@name='anywhere']");
-//    By inputDestinationAirport = By.xpath("//input[@name='dstAirport']");
-//    By inputSourceAirport = By.xpath("//input[@name='srcAirport']");
-//    By listCurrency = By.name("currency");
-//    By listDepartureMonth = By.name("depmonth");
-//    By listReturnMonth = By.name("arrmonth");
-//    By radiobuttonOneWay = By.xpath("//input[@value='oneway']");
-//    By radiobuttonReturn = By.xpath("//input[@value='return']");
-//    By buttonAdvancedSearchParameters = By.id("showMoreParams");
 
     public SearchPage(WebDriver driver) {
         this.driver = driver;
@@ -89,15 +80,6 @@ public class SearchPage {
     public void goTo(String searchURL) {
         driver.navigate().to(searchURL);
     }
-
-//  Poprzednia, działająca wersja
-//    public void selectOrigin(String sourceAirportCode) throws InterruptedException {
-//        inputSourceAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
-//        inputSourceAirport.sendKeys(sourceAirportCode);
-////        Thread.sleep(1000);
-//        By buttonSourceAirport = By.xpath("//strong[text()='" + sourceAirportCode + "']//parent::span[@class='code']");
-//        driver.findElement(buttonSourceAirport).click();
-//    }
 
     public void selectOrigin(String origin) throws InterruptedException {
         inputSourceAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
@@ -116,13 +98,6 @@ public class SearchPage {
         inputSourceAirport.sendKeys(Keys.ENTER);
     }
 
-//  Stara działająca wersja
-//    public void selectDestination(String destinationAirportCode) throws InterruptedException {
-//        inputDestinationAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
-//        inputDestinationAirport.sendKeys(destinationAirportCode);
-//        By buttonDestinationAirport = By.xpath("//strong[text()='" + destinationAirportCode + "']//parent::span[@class='code']");
-//        driver.findElement(buttonDestinationAirport).click();
-//    }
     public void selectDestination(String destination) throws InterruptedException {
         inputDestinationAirport.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         inputDestinationAirport.sendKeys(destination);
@@ -241,5 +216,9 @@ public class SearchPage {
 
     public void checkErrorMsg() {
         Assertions.assertTrue(spanErrorMessage.size() >= 1, "Error message wasn't display");
+    }
+
+    public void allowOvernightChanges() {
+        checkboxOvernight.click();
     }
 }

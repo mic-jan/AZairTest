@@ -1,9 +1,7 @@
 package pageObjects;
 
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
@@ -35,8 +33,17 @@ public class ResultPage {
     @FindBy(xpath = "//*[name()='svg']")
     private WebElement hideAd;
 
-//    @FindBy(xpath = "//a[contains(text(),'New search')]")
-//    private WebElement linkNewSearch;
+    @FindBy(xpath = "//input[@name='srcAirport']")
+    private WebElement inputSourceAirport;
+
+    @FindBy(xpath = "//input[@name='dstAirport']")
+    private WebElement inputDestinationAirport;
+
+    @FindBy(xpath = "//span[@class='from']/span[@class='code']")
+    private WebElement originCode;
+
+    @FindBy(xpath = "//span[@class='to']/span[@class='code']")
+    private WebElement destinationCode;
 
     @FindBy(xpath = "//span[@id='swap']/a")
     private WebElement linkSwap;
@@ -117,5 +124,39 @@ public class ResultPage {
     public void returnToSearchPage() throws InterruptedException {
         linkNewSearch.click();
         Thread.sleep(7000);
+    }
+
+    public void selectOrigin(String origin) {
+        inputSourceAirport.sendKeys(Keys.chord(Keys.CONTROL, "a",Keys.BACK_SPACE));
+        inputSourceAirport.sendKeys(origin);
+        if (origin.length() == 3) {
+            By buttonOriginAirport = By.xpath("//strong[text()='" + origin + "']//parent::span[@class='code']");
+            driver.findElement(buttonOriginAirport).click();
+        } else {
+            inputSourceAirport.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER));
+        }
+    }
+
+    public void selectDestination(String destination) {
+        inputDestinationAirport.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
+        inputDestinationAirport.sendKeys(destination);
+        if (destination.length() == 3) {
+            By buttonDestinationAirport = By.xpath("//strong[text()='" + destination + "']//parent::span[@class='code']");
+            driver.findElement(buttonDestinationAirport).click();
+        } else {
+            inputDestinationAirport.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER));
+        }
+    }
+
+    public void correctRouteIsDisplayed(String origin, String destination) {
+        String originDisplayed = originCode.getText();
+        String destinationDisplayed = destinationCode.getText();
+        Assertions.assertEquals(originDisplayed, origin);
+        Assertions.assertEquals(destinationDisplayed, destination);
+    }
+
+    public void userRedirected() {
+        String windowTitle = driver.getTitle();
+        Assertions.assertFalse(windowTitle.contains("AZair"));
     }
 }

@@ -22,4 +22,9 @@ public class RyanAirPageStepDefinition {
     public void checkAvailablity() {
         ryanAirPage.checkAvailablity();
     }
+
+    @And("I check if user is redirected to Ryanair page")
+    public void redirectionToRyanair() {
+        ryanAirPage.redirectionToRyanair();
+    }
 }

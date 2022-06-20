@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
@@ -116,7 +117,7 @@ public class SearchPage {
 
     }
 
-    public void searchFlight() {
+    public void searchFlight() throws InterruptedException {
         buttonSearch.click();
     }
 
@@ -135,17 +136,13 @@ public class SearchPage {
 
     public void selectCurrency(String currencyCode) {
         Select currency = new Select(listCurrency);
-        currency.selectByValue(currencyCode); //Selecting correct month & year from list
+        currency.selectByValue(currencyCode);
     }
 
     public void selectMaxChanges(int maxChanges) {
         driver.findElement(By.xpath("//input[@name='maxChng'][@value='" + maxChanges + "']")).click();
     }
 
-    /**
-     * Selects departure date using dropdown list (month and year) and calendar widget (day)
-     * @param departureDate -> date format: DD.MM.YYYY, e.g. 31.12.2022
-     */
     public void selectDepartureDate(String departureDate) throws InterruptedException {
         String[] date = departureDate.split("\\.");
         String day = date[0];

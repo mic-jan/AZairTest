@@ -7,7 +7,7 @@ Feature: 10. Check if flight is available on Ryanair page
     And   Select origin airport(s) from list: "WRO"
     And   Select destination airport(s) from list: "ALC"
     And   Select soonest departure date "30.06.2022"
-    And   Select latest departure date "30.06.2022"
+    And   Select latest departure date "10.07.2022"
     And   Select maximum number of changes 0
     And   Select currency "random"
     And   Perform search

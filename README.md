@@ -35,7 +35,3 @@ in project directory.
 * junit-jupiter-api
 * cucumber-picocontainer
 * webdrivermanager
-
--- 
-Pozdrawiam
-Michał Jański

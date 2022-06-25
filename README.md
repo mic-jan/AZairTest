@@ -1,8 +1,10 @@
 # AZairTest
 
-This project test [AZair.com](https://www.azair.com), which is lowcost flights search engine. 
+This project tests [AZair.com](https://www.azair.com) web application, which is lowcost flights search engine. 
 
 E2E tests use Selenium WebDriver framework and test suite contains 13 Cucumber scenarios.
+
+Running all tests takes about 5 mins.
 
 ## Tech stack
 

@@ -37,3 +37,7 @@ in project directory.
 * junit-jupiter-api
 * cucumber-picocontainer
 * webdrivermanager
+
+## To do
+- [ ] get rid of sleep and implement fluent wait
+- [ ] add method to dynamically set dates used in scenarios (e.g. use "next month" instead of hardcoded dates)
